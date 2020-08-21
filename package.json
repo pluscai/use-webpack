@@ -1,0 +1,17 @@
+{
+  "name": "lesson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "webpack": "^4.44.1"
+  }
+}
