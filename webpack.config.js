@@ -17,6 +17,14 @@ module.exports = {
                     limit: 20480 // 2048=1k 图片小于10k就转base64
                 }
             }
+        },{
+            test: /\.scss$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'sass-loader',
+                'postcss-loader'
+            ]
         }]
     },
     output: {
