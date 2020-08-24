@@ -1,11 +1,11 @@
-var Header = require('./header.js');
-var Sidebar = require('./sidebar.js');
-var Content = require('./content.js');
+import detailImg from './detail.png'
+console.log(detailImg);
 
+var img = new Image();
+img.src = detailImg;
 
-new Header();
-new Sidebar();
-new Content();
+var root = document.getElementById('root');
+root.append(img);
 
 
 
