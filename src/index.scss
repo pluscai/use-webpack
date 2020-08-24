@@ -1,7 +1,32 @@
-body {
-  .advatar {
-    width: 150px;
-    height: 150px;
-    transform: translate(100px, 100px);
-  }
+@font-face {font-family: "iconfont";
+  src: url('./font/iconfont.eot?t=1598265987535'); /* IE9 */
+  src: url('./font/iconfont.eot?t=1598265987535#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPkAAsAAAAACCwAAAOXAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqDSIMEATYCJAMUCwwABCAFhG0HShsSBxEVnOvIvgoox+ySE7u+5HU7W0ZyzcaZfIo75SU7SamqqhIE6N/XJHkLiAf778lo3Qkl4P35s7TnLFO220xX0U3lS+BTJDwIlWGeLgB64C6XWZpjwxagv0/cO20s0Gw++5bL2jTWsqV96gLqogmUhXtiG6RACyQwbxi7ifIgjkMAxrgTisi9Kq3FEA0wTgBisO3XhWHKhFaTLzBEoF+yVEMsZQVDuUAOsIR/X7xmTxiCRE8Bplb2zetN5jOTZ/lq+n9flIJiPAegrQIFhAIaiJGlrsGoMBWKwtjprZEJGGOIRI7Vzcqmq///Y/WOjMZQsZc/nkSB0AfkmgKQKaY1eGaCCQh4ZiUvMwSIBCQ8yzdwv3Q9o/FImanAXt3sC3hlAyQSYST0hKUmPK1MTS377TkwY79u7/R9fr1q62st6l/NdSsZT19lZ7FmjWDG6kZzZSEnvVyJOTEj+vjd4uu6wqu3I5sedexO0bWekjMhdat6Dszo1t0VODPucXrucKbffqd+/dbsWrfWtvfK3es39Om7eufadXZ9Vu3ZsH5S77264L6rN285EGC1a9+mjdU7Pef7L/Bf57/W09Rl24Xqjvlbvbb/edFKo43vG9+YvnLpDR6/6bE5CHfkaGvcpk0bxm2ct1HX0rL32rxrZ5tbdCluT3Pz2S3MTmzdus7Zx2nVjLjOgPuSgL9BSMKqOwK8NK0zAMzObBwyt/Oj/Wzj4HmiU/9GL9XxSW++qOkqKYaUaNPZ+2wSfMjwp+Oe/chSWf/PZTzgLNU5ngT8r0YtKQD5SIUDqOty7g/9DYmrLud3WKR+NTTRAHg04MIsHvpfo33aEAma4vcpWpZprgqY9TS7FMvtQXpEYQCA1OqMgZ/ms+bpOEa71rkgMMQuhsQANygM8aVqzFDoYUIs9DEkA8aEULDaBBtGohCaERDMHAECS45AYs4VKCy5RdWYT6CHPW+hj6VQMKZe2Gxpgr+QWHWeqRHqsV2g7ThqZBUV5D+Qqb7JSRXnvVAuNoq7WzvZ7DVFymPMKFOzJ6JRZw54JZxG3jOmzBPqZGsQSWfb27rsSVsdB1BwnqkR6rFdoO04alpbVO7zD2Sqb3INqSP+QrnYznF3a6cF9VofW5Gu5ZwyNXsiGnXmgFfCIPKeMZUPmlAnW0OPRDrbhpV0W/3W/MbwjNsAUAAetzKSQglN6Al9VqUm28TVwrVUXtVNHKpdmdvGNwAA') format('woff2'),
+  url('./font/iconfont.woff?t=1598265987535') format('woff'),
+  url('./font/iconfont.ttf?t=1598265987535') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./font/iconfont.svg?t=1598265987535#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icontupian:before {
+  content: "\e60b";
+}
+
+.iconsousuo:before {
+  content: "\e627";
+}
+
+.iconfanhui:before {
+  content: "\e646";
+}
+
+.iconxiala:before {
+  content: "\e611";
 }
