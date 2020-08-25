@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -11,7 +12,9 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         open: true,
-        port: 8080
+        port: 8080,
+        hot: true,
+        hotOnly: true
     },
     module: {
         rules: [{
@@ -40,12 +43,22 @@ module.exports = {
                 'sass-loader',
                 'postcss-loader'
             ]
+        },{
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                "css-loader",
+                'postcss-loader'
+            ]
         }]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: 'src/index.html',
-        cache: false
-    }), new CleanWebpackPlugin()],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+         }),
+        new CleanWebpackPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+    ],
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
