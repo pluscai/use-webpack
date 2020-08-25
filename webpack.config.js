@@ -8,6 +8,11 @@ module.exports = {
     entry: {
         main: './src/index.js'
     },
+    devServer: {
+        contentBase: './dist',
+        open: true,
+        port: 8080
+    },
     module: {
         rules: [{
             test: /\.(png|png|gif)$/,
@@ -38,7 +43,8 @@ module.exports = {
         }]
     },
     plugins: [new HtmlWebpackPlugin({
-        template: 'src/index.html'
+        template: 'src/index.html',
+        cache: false
     }), new CleanWebpackPlugin()],
     output: {
         filename: '[name].js',
