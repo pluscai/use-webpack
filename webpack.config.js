@@ -6,6 +6,7 @@ module.exports = {
     mode: 'development',
     entry: {
         main: './src/index.js',
+        sub: './src/index.js'
     },
     module: {
         rules: [{
@@ -40,7 +41,8 @@ module.exports = {
         template: 'src/index.html'
     }), new CleanWebpackPlugin()],
     output: {
-        filename: 'dist.js',
+        publicPath: 'http://cdn.com',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist')
     }
 }
