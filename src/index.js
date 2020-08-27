@@ -1,13 +1,4 @@
-import "@babel/polyfill";
+import { add } from './math.js'
 
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-
-class App extends Component {
-    render() {
-        return <div>Hello world</div>
-    }
-}
-
-ReactDom.render(<App />, document.getElementById('root'));
+add(1, 2);
 
