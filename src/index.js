@@ -1,3 +1,12 @@
-import _ from 'lodash';
+function getComponent() {
+    return import('lodash').then(({ default: _ }) => {
+        var element = document.createElement('div');
+        element.innerHTML = _.join(['c', 's', 'x'], '-');
+        return element;
+    })
+}
 
-console.log(_.join(['a', 'b', 'd'], '***'))
+// 异步获取lodash库
+getComponent().then(element => {
+    document.body.appendChild(element);
+})
