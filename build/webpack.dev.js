@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
@@ -33,7 +34,12 @@ const devConfig = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
+    output: {
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
+        path: path.resolve(__dirname, '../dist')
+    }
    
 }
 

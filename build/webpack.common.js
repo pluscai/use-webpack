@@ -1,4 +1,3 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -36,14 +35,13 @@ module.exports = {
         new CleanWebpackPlugin(),
     ],
     optimization: {
+        runtimeChunk: {
+            name: 'runtime'
+        },
         usedExports: true,
         splitChunks: {
           chunks: 'all' // 同步异步代码都做代码分割
         }
     },
-    output: {
-        filename: '[name].js',
-        chunkFilename: '[name].chunk.js',
-        path: path.resolve(__dirname, '../dist')
-    }
+    performance: false
 }

@@ -1,4 +1,6 @@
-import './style.css';
-import './style1.css';
+import _ from 'lodash';
+import $ from 'jquery';
 
-console.log('hello world');
+const dom = $('<div>');
+dom.html(_.join(['c','s','xx']));
+$('body').append(dom);

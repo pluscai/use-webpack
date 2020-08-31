@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -33,7 +34,12 @@ const prodConfig = {
     },
     plugins: [
         new MiniCssExtractPlugin({})
-    ]
+    ],
+    output: {
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].chunk.js',
+        path: path.resolve(__dirname, '../dist')
+    }
 }
 
 module.exports  = merge(commonConfig, prodConfig);
