@@ -1,5 +1,7 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -9,7 +11,12 @@ module.exports = {
         rules: [{ 
                 test: /\.js$/, 
                 exclude: /node_modules/, 
-                loader: "babel-loader"
+                use: [{
+                    loader: 'babel-loader'
+                }, {
+                    loader: 'imports-loader?this=>window'
+                }]
+               
             },{
                 test: /\.(png|png|gif)$/,
                 use: {
@@ -33,6 +40,9 @@ module.exports = {
             template: 'src/index.html'
          }),
         new CleanWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery'
+        })
     ],
     optimization: {
         runtimeChunk: {
@@ -43,5 +53,8 @@ module.exports = {
           chunks: 'all' // 同步异步代码都做代码分割
         }
     },
-    performance: false
+    performance: false,
+    output: {
+		path: path.resolve(__dirname, '../dist')
+	}
 }
