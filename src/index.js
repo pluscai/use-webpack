@@ -1,6 +1,4 @@
-document.addEventListener('click', () => {
-   import(/* webpackPrefetch: true */ './click.js').then(({default: func}) => {
-       func();
-   })
-});
+import './style.css';
+import './style1.css';
 
+console.log('hello world');

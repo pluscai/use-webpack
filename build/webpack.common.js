@@ -27,24 +27,7 @@ module.exports = {
             use: {
                 loader: "file-loader"
             }
-        },{
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                {
-                    loader: "css-loader"
-                },
-                'sass-loader',
-                'postcss-loader'
-            ]
-        },{
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                "css-loader",
-                'postcss-loader'
-            ]
-        }]
+        } ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -53,12 +36,14 @@ module.exports = {
         new CleanWebpackPlugin(),
     ],
     optimization: {
+        usedExports: true,
         splitChunks: {
           chunks: 'all' // 同步异步代码都做代码分割
         }
     },
     output: {
         filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
         path: path.resolve(__dirname, '../dist')
     }
 }
