@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ReactDom from 'react-dom';
-import Home from './home';
+import Home from './home.js';
 import List from './list';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
                     <Route path='/list' component={List}></Route>
                 </div>
             </BrowserRouter>
-        )
+        );
 
         
     }
