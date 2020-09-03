@@ -7,14 +7,18 @@ module.exports = {
     entry: {
         main: './src/index.js'
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        alias: {
+            child: path.resolve(__dirname, '../src/child')
+        }
+    },
     module: {
         rules: [{ 
-                test: /\.js$/, 
+                test: /\.jsx?$/, 
                 exclude: /node_modules/, 
                 use: [{
                     loader: 'babel-loader'
-                }, {
-                    loader: 'imports-loader?this=>window'
                 }]
                
             },{
@@ -25,7 +29,7 @@ module.exports = {
                         // 下面[name]这种写法就是placeholder-占位符
                         name: '[name]_[hash].[ext]',
                         outputPath: 'images/',
-                        limit: 20480 // 2048=1k 图片小于10k就转base64
+                        limit: 10240 // 1024=1k 图片小于10k就转base64
                     }
                 }
         },{
@@ -39,10 +43,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/index.html'
          }),
-        new CleanWebpackPlugin(),
-        new webpack.ProvidePlugin({
-            $: 'jquery'
-        })
+        new CleanWebpackPlugin()
     ],
     optimization: {
         runtimeChunk: {
